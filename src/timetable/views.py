@@ -5,6 +5,7 @@ from django.http import HttpResponse
 def index(request):
     return HttpResponse("<h1>Index of/</h1><br>"
                         "<p>Hello, world!<br><br>"
+                        "<h3>Пасхалка от Стасяна</h3><br>"
                         "Start:<br>"
                         "MOV AX, 9<br>"
                         "MOV DX, OFFSET Message<br>"
