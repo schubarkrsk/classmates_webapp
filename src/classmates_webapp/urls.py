@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from chat import views as chatviews
+from tasks import views as tasksviews
+from timetable import views as timetableviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', timetableviews.index, name="home")
 ]

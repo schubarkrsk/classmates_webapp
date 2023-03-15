@@ -28,7 +28,7 @@ class Lessons(models.Model):
     id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Название предмета")
     room = models.TextField(max_length=100, help_text="Номер аудитории")
-    teacher = models.ForeignKey(Teachers, on_delete=models.CASCADE(), help_text="ФИО преподавателя")
+    teacher = models.ForeignKey(Teachers, on_delete=models.CASCADE, help_text="ФИО преподавателя")
 
     class Meta:
         verbose_name = "Lesson"
