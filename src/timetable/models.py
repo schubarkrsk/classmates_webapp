@@ -17,7 +17,7 @@ class Teachers(models.Model):
         ordering = ["familiya", "imya", "otchestvo"]
 
     def __str__(self):
-        return f"Teacher {self.id}> {self.familiya} {self.imya} {self.otchestvo}"
+        return f"<{self.id}> {self.familiya} {self.imya} {self.otchestvo}"
 
 
 class Lessons(models.Model):
@@ -35,4 +35,4 @@ class Lessons(models.Model):
         ordering = ["title"]
 
     def __str__(self):
-        return f"Lesson {self.id}> {self.title} | {self.room} | {self.teacher}"
+        return f"<{self.id}> {self.title} | {self.room} | {self.teacher}"
