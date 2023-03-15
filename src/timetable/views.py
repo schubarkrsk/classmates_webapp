@@ -11,4 +11,6 @@ def index(request):
                         "INT 21h<br>"
                         "RET<br>"
                         "Message DB \"I Love IE\"<br>"
-                        "End Start</p>")
+                        "End Start</p>"
+                        "<br><br>"
+                        "<p>SECRET HASH: b42acda9b495eac5b6c303fc993afe02e3a594e1bffb801be9b46aecec9f55fa</p>")
