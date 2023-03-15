@@ -3,8 +3,9 @@ Project for school10 krasnoyarsk
 
 
 ## Requiriments
-* Python 3.8
-* Django 4.1.7
+* Python >= 3.8 или новее
+* Django == 4.1.7
 
 ## UPDATES
 * 15-03-23 :: Файлы Django перемещены в ./src
+* 15-03-23 :: Сформирована модель для справочников приложения timetable, описаны фичи и кусок документации
