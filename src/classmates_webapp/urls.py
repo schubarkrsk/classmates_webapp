@@ -21,5 +21,5 @@ from timetable import views as timetableviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', timetableviews.index, name="home")
+    path('', timetableviews.index, name="home") # TODO: Перенести в профильный URLs приложения
 ]
