@@ -8,8 +8,8 @@ class Chat(models.Model):
     """
     # Columns
     id = models.IntegerField(primary_key=True)
-    id_from = models.ForeignKey(timetablemodel.Users, on_delete=models.CASCADE, help_text="Отправитель")
-    id_to = models.ForeignKey(timetablemodel.Users, on_delete=models.CASCADE, help_text="Получатель")
+    uuidfrom = models.IntegerField(help_text="Отправитель")
+    uuidto = models.IntegerField(help_text="Получатель")
     data = models.DateField(help_text="Дата отправления")
     time = models.TimeField(help_text="Время отправления")
     msg = models.CharField(max_length=100, help_text="Сообщение...")
