@@ -7,7 +7,7 @@ class Chat(models.Model):
     Модель записи задачь
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     uuidfrom = models.IntegerField(help_text="Отправитель")
     uuidto = models.IntegerField(help_text="Получатель")
     data = models.DateField(help_text="Дата отправления")

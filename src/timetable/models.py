@@ -7,7 +7,7 @@ class Users(models.Model):
     Модель записи расписания задачи
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     familiya = models.CharField(max_length=50, help_text="Фамилия")
     imya = models.CharField(max_length=50, help_text="Имя")
     otchestvo = models.CharField(max_length=50, help_text="Отчество")
@@ -27,7 +27,7 @@ class Teachers(models.Model):
     Модель записи таблицы учителей
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     familiya = models.CharField(max_length=50, help_text="Фамилия")
     imya = models.CharField(max_length=50, help_text="Имя")
     otchestvo = models.CharField(max_length=50, help_text="Отчество")
@@ -45,7 +45,7 @@ class Lessons(models.Model):
     Модель записи таблицы уроков (справочник, не расписание)
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Название предмета")
     room = models.TextField(max_length=100, help_text="Номер аудитории")
     teacher = models.ForeignKey(Teachers, on_delete=models.CASCADE, help_text="ФИО преподавателя")
@@ -62,7 +62,7 @@ class Timetable(models.Model):
     Модель записи расписания
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     day_of_week = models.CharField(max_length=100, help_text="День недели")
     lesson_id = models.ForeignKey(Lessons, on_delete=models.CASCADE, help_text="id урока")
     start = models.TimeField(help_text="Начало урока")

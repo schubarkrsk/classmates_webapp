@@ -7,7 +7,7 @@ class Tasks(models.Model):
     Модель записи расписания задачи
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Название задачи")
     owner = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Ответственный за задачу")
     status = models.TextField(max_length=50, help_text="Статус задачи")
@@ -26,7 +26,7 @@ class Task_visitors(models.Model):
     Модель записи задач
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     task = models.CharField(max_length=100, help_text="Название задачи")
     visitor_id = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="id ответственного")
 
@@ -42,7 +42,7 @@ class Task_status(models.Model):
     Модель записи задач
     """
     # Columns
-    id = models.IntegerField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Статус задачи")
 
     class Meta:
