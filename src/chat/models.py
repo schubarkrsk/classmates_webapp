@@ -1,5 +1,5 @@
 from django.db import models
-from timetable import models as timetablemodel
+from timetable import models as timetable_model
 
 # Create your models here.
 class Chat(models.Model):

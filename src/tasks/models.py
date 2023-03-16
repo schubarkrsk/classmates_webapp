@@ -1,5 +1,5 @@
 from django.db import models
-from timetable import models as timetablemodel
+from timetable import models as timetable_model
 
 # Create your models here.
 class Tasks(models.Model):
@@ -9,7 +9,7 @@ class Tasks(models.Model):
     # Columns
     id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Название задачи")
-    owner = models.ForeignKey(timetablemodel.Users, on_delete=models.CASCADE, help_text="Ответственный за задачу")
+    owner = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Ответственный за задачу")
     status = models.TextField(max_length=50, help_text="Статус задачи")
     description = models.TextField(max_length=100, help_text="Задача")
     deadline = models.DateField(help_text="Дедлайн задачи")
@@ -23,12 +23,12 @@ class Tasks(models.Model):
 
 class Task_visitors(models.Model):
     """
-    Модель записи задачь
+    Модель записи задач
     """
     # Columns
     id = models.IntegerField(primary_key=True)
     task = models.CharField(max_length=100, help_text="Название задачи")
-    visitor_id = models.ForeignKey(timetablemodel.Users, on_delete=models.CASCADE, help_text="id ответственного")
+    visitor_id = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="id ответственного")
 
     class Meta:
         verbose_name = "Task visitor"
@@ -39,7 +39,7 @@ class Task_visitors(models.Model):
 
 class Task_status(models.Model):
     """
-    Модель записи задачь
+    Модель записи задач
     """
     # Columns
     id = models.IntegerField(primary_key=True)
