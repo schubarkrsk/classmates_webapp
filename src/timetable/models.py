@@ -11,13 +11,13 @@ class Users(models.Model):
     familiya = models.CharField(max_length=50, help_text="Фамилия")
     imya = models.CharField(max_length=50, help_text="Имя")
     otchestvo = models.CharField(max_length=50, help_text="Отчество")
-    birthday = models.TextField(max_length=50, help_text="День рождения")
-    login = models.TextField(max_length=100, help_text="Логин")
-    password = models.TextField(max_length=50, help_text="Пароль")
+    birthday = models.DateField(help_text="День рождения")
+    login = models.CharField(max_length=128, help_text="Логин")
+    password = models.CharField(max_length=256, help_text="Пароль")
 
     class Meta:
         verbose_name = "Users"
-        ordering = ["title"]
+        ordering = ["familiya", "imya", "otchestvo"]
 
     def __str__(self):
         return f"<{self.id}> {self.familiya} | {self.imya} | {self.otchestvo} | {self.birthday} | {self.login} | {self.password}"
@@ -64,7 +64,7 @@ class Timetable(models.Model):
     # Columns
     id = models.IntegerField(primary_key=True)
     day_of_week = models.CharField(max_length=100, help_text="День недели")
-    lesson_id = models.TextField(max_length=100, help_text="id урока")
+    lesson_id = models.ForeignKey(Lessons, on_delete=models.CASCADE, help_text="id урока")
     start = models.TextField(max_length=50, help_text="Начало урока")
     end = models.TextField(max_length=50, help_text="Конец урока")
 
