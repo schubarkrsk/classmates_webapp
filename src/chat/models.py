@@ -20,7 +20,7 @@ class Chat(models.Model):
     def __str__(self):
         return f"<{self.id}> {self.id_from} | {self.id_to} | {self.data} | {self.time} | {self.msg}"
 
-class Group_Chat(models.Model):
+class chat_group(models.Model):
     """
     Модель записи групповых чатов
     """
@@ -30,7 +30,7 @@ class Group_Chat(models.Model):
     uuid = models.IntegerField(help_text="Добавление участника")
 
     class Meta:
-        verbose_name = "Group_Chat"
+        verbose_name = "chat_group"
 
     def __str__(self):
         return f"<{self.id}> {self.title} | {self.uuid}"
