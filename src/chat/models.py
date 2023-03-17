@@ -20,7 +20,7 @@ class Chat(models.Model):
     def __str__(self):
         return f"<{self.id}> {self.id_from} | {self.id_to} | {self.data} | {self.time} | {self.msg}"
 
-class chat_group(models.Model):
+class Group(models.Model):
     """
     Модель записи групповых чатов
     """
@@ -29,8 +29,43 @@ class chat_group(models.Model):
     title = models.CharField(max_length=100, help_text="Название")
     uuid = models.IntegerField(help_text="Добавление участника")
 
+
     class Meta:
-        verbose_name = "chat_group"
+        verbose_name = "Group"
 
     def __str__(self):
         return f"<{self.id}> {self.title} | {self.uuid}"
+
+class ListGroup(models.Model):
+    """
+    Модель списка групповых чатов
+    """
+    # Columns
+    id = models.AutoField(primary_key=True)
+    chatlist = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Список чатов")
+    # user = models.ForeignKey(Chat, on_delete=models.CASCADE, help_text="Список участников")
+
+
+    class Meta:
+        verbose_name = "list group"
+
+    def __str__(self):
+        return f"<{self.id}>  {self.chatlist} | {self.user}"
+
+# class ListSmg(models.Model):
+#     """
+#     Модель списка сообщений
+#     """
+#     # Columns
+#     id = models.AutoField(primary_key=True)
+#     Users = models.ForeignKey(Users, on_delete=models.CASCADE, help_text="Пользователь")
+#     chatfrom = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Пользователь")
+#     data = models.DateField(help_text="Дата отправления")
+#     time = models.TimeField(help_text="Время отправления")
+#
+#     class Meta:
+#         verbose_name = "ListSmg"
+#
+#     def __str__(self):
+#         return f"<{self.id}> {self.Users} | {self.chatfrom} | {self.data} | {self.time}"
+
