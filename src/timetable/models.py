@@ -20,7 +20,21 @@ class Users(models.Model):
         ordering = ["familiya", "imya", "otchestvo"]
 
     def __str__(self):
-        return f"<{self.id}> {self.familiya} | {self.imya} | {self.otchestvo} | {self.birthday} | {self.login} | {self.password}"
+        return f"<{self.id}> {self.familiya} {self.imya} {self.otchestvo} | {self.login} "
+
+
+class UserRoles(models.Model):
+    id = models.AutoField(primary_key=True)
+    uuid = models.ForeignKey(Users, on_delete=models.CASCADE, help_text="Пользователь")
+    isAdmin = models.BooleanField()
+    isTeacher = models.BooleanField()
+
+    class Meta:
+        verbose_name = "User role"
+        ordering = ["id"]
+
+    def __str__(self):
+        return f"<{self.id}> | {self.uuid.login} ({self.uuid.id}) | isAdmin::{self.isAdmin} | isTeacher::{self.isTeacher}"
 
 class Teachers(models.Model):
     """
