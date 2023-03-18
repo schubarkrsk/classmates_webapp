@@ -6,6 +6,7 @@ from timetable import models as timetable_model
 Регистрация групповых чатов (GroupChat)
 id - AutoField
 owner - ForeginKey для timetable_model.Users
+title - VarcharField (название чата)
 
 Члены группового чата
 id - AutoField
