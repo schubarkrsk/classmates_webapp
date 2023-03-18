@@ -61,7 +61,7 @@ class ListSmg(models.Model):
     user = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="id пользователя")
     chatfrom = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Пользователь")
     data = models.DateField(help_text="Дата отправления")
-    time = models.TimeField(help_text="Время отправления")
+    # time = models.TimeField(help_text="Время отправления")
 
     class Meta:
         verbose_name = "ListSmg"

@@ -9,4 +9,4 @@ class ChatAdmin(admin.ModelAdmin):
 admin.site.register(Chat)
 admin.site.register(Group)
 admin.site.register(ListGroup, ChatAdmin)
-admin.site.register(ListSmg)
+# admin.site.register(ListSmg)
