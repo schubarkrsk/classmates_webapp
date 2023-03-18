@@ -39,54 +39,55 @@ class Chat(models.Model):
         verbose_name = "Chat"
 
     def __str__(self):
-        return f"<{self.id}> {self.id_from} | {self.id_to} | {self.data} | {self.time} | {self.msg}"
+        return f"<{self.id}> {self.uuidfrom} | {self.uuidto} | {self.data} | {self.time} | {self.msg}"
 
-class Group(models.Model):
+class GroupChat(models.Model):
     """
     Модель записи групповых чатов
     """
     # Columns
     id = models.AutoField(primary_key=True)
+    owner = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Пользователь")
     title = models.CharField(max_length=100, help_text="Название")
-    uuid = models.IntegerField(help_text="Добавление участника")
 
 
     class Meta:
-        verbose_name = "Group"
+        verbose_name = "Group chat"
 
     def __str__(self):
-        return f"<{self.id}> {self.title} | {self.uuid}"
+        return f"<{self.id}> {self.owner} | {self.title}"
 
 class ListGroup(models.Model):
     """
-    Модель списка групповых чатов
+    Модель списка членов групповых чатов
     """
     # Columns
     id = models.AutoField(primary_key=True)
-    chatlist = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Список чатов")
-    uuid = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="id пользователя")
+    chat = models.ForeignKey(GroupChat, on_delete=models.CASCADE, help_text="Групповой чат")
+    user_id = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Пользователь")
 
 
     class Meta:
         verbose_name = "list group"
 
     def __str__(self):
-        return f"<{self.id}>  {self.chatlist} | {self.user}"
+        return f"<{self.id}>  {self.chat} | {self.user_id}"
 
 class ListMsg(models.Model):
     """
-    Модель списка сообщений
+    Модель списка сообщений в групповом чате
     """
     # Columns
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="id пользователя")
-    chatfrom = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Пользователь")
+    chat = models.ForeignKey(GroupChat, on_delete=models.CASCADE, help_text="Групповой чат")
+    user_id = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Пользователь")
     data = models.DateField(help_text="Дата отправления")
     time = models.TimeField(help_text="Время отправления")
+    message = models.TextField(max_length=100, help_text="Сообщение...")
 
     class Meta:
         verbose_name = "ListSmg"
 
     def __str__(self):
-        return f"<{self.id}> {self.users} | {self.chatfrom} | {self.data} | {self.time}"
+        return f"<{self.id}> {self.chat} | {self.user_id} | {self.data} | {self.time} | {self.message}"
 
