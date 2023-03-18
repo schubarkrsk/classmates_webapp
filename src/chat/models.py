@@ -86,7 +86,7 @@ class ListMsg(models.Model):
     message = models.TextField(max_length=100, help_text="Сообщение...")
 
     class Meta:
-        verbose_name = "ListSmg"
+        verbose_name = "ListMsg"
 
     def __str__(self):
         return f"<{self.id}> {self.chat} | {self.user_id} | {self.data} | {self.time} | {self.message}"
