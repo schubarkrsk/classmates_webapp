@@ -43,7 +43,7 @@ class ListGroup(models.Model):
     # Columns
     id = models.AutoField(primary_key=True)
     chatlist = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Список чатов")
-    # user = models.ForeignKey(Chat, on_delete=models.CASCADE, help_text="Список участников")
+    uuid = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="id пользователя")
 
 
     class Meta:
@@ -52,20 +52,20 @@ class ListGroup(models.Model):
     def __str__(self):
         return f"<{self.id}>  {self.chatlist} | {self.user}"
 
-# class ListSmg(models.Model):
-#     """
-#     Модель списка сообщений
-#     """
-#     # Columns
-#     id = models.AutoField(primary_key=True)
-#     Users = models.ForeignKey(Users, on_delete=models.CASCADE, help_text="Пользователь")
-#     chatfrom = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Пользователь")
-#     data = models.DateField(help_text="Дата отправления")
-#     time = models.TimeField(help_text="Время отправления")
-#
-#     class Meta:
-#         verbose_name = "ListSmg"
-#
-#     def __str__(self):
-#         return f"<{self.id}> {self.Users} | {self.chatfrom} | {self.data} | {self.time}"
+class ListSmg(models.Model):
+    """
+    Модель списка сообщений
+    """
+    # Columns
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="id пользователя")
+    chatfrom = models.ForeignKey(Group, on_delete=models.CASCADE, help_text="Пользователь")
+    data = models.DateField(help_text="Дата отправления")
+    time = models.TimeField(help_text="Время отправления")
+
+    class Meta:
+        verbose_name = "ListSmg"
+
+    def __str__(self):
+        return f"<{self.id}> {self.users} | {self.chatfrom} | {self.data} | {self.time}"
 
