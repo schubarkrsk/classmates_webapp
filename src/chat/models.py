@@ -1,6 +1,26 @@
 from django.db import models
 from timetable import models as timetable_model
 
+# TODO: Натан, какая то херня с моделями
+"""
+Регистрация групповых чатов (GroupChat)
+id - AutoField
+owner - ForeginKey для timetable_model.Users
+
+Члены группового чата
+id - AutoField
+chat - ForeginKey для GroupChat
+user_id - ForeginKey для timetable_model.Users
+
+Сообщения в групповом чате
+id - AutoField
+chat - ForeginKey для GroupChat
+user_id - ForeginKey для timetable_model.Users
+date - DateField
+time - TimeField
+message - TextField
+"""
+
 # Create your models here.
 class Chat(models.Model):
     """
@@ -52,7 +72,7 @@ class ListGroup(models.Model):
     def __str__(self):
         return f"<{self.id}>  {self.chatlist} | {self.user}"
 
-class ListSmg(models.Model):
+class ListMsg(models.Model):
     """
     Модель списка сообщений
     """
