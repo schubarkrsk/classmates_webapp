@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Chat with {{ receiver.username }}</h1>
+    <ul>
+        {% for message in messages %}
+            {% if message.sender == user %}
+                <li><strong>You:</strong> {{ message.content }}</li>
+            {% else %}
+                <li><strong>{{ message.sender.username }}:</strong> {{ message.content }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Send</button>
+    </form>
+{% endblock %}

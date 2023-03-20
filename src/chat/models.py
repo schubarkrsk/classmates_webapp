@@ -91,3 +91,20 @@ class ListMsg(models.Model):
     def __str__(self):
         return f"<{self.id}> {self.chat} | {self.user_id} | {self.data} | {self.time} | {self.message}"
 
+class Message(models.Model):
+    """
+    Модель сообщений
+    """
+    # Columns
+    sender = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, related_name='sender')
+    receiver = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, related_name='receiver')
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "message"
+
+    def __str__(self):
+        return f"<{self.sender}> {self.receiver} | {self.content} | {self.timestamp}"
+
+
