@@ -34,7 +34,9 @@ class UserRoles(models.Model):
         ordering = ["id"]
 
     def __str__(self):
-        return f"<{self.id}> | {self.uuid.login} ({self.uuid.id}) | isAdmin::{self.isAdmin} | isTeacher::{self.isTeacher}"
+        return f"<{self.id}> | {self.uuid.login} ({self.uuid.id}) | " \
+               f"isAdmin::{self.isAdmin} | isTeacher::{self.isTeacher} "
+
 
 class Teachers(models.Model):
     """
@@ -70,6 +72,7 @@ class Lessons(models.Model):
 
     def __str__(self):
         return f"<{self.id}> {self.title} | {self.room} | {self.teacher}"
+
 
 class Timetable(models.Model):
     """
