@@ -14,17 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from chat import views as chatviews
 from tasks import views as tasksviews
 from timetable import views as timetableviews
-from .views import chat
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', timetableviews.index, name="home") # TODO: Перенести в профильный URLs приложения
 ]
 
-urlpatterns = [
-    path('chat/<str:username>/', chat, name='chat'),
-]
+# urlpatterns = [
+#     path('chat/<str:user>/', chatviews, name='chat')
+# ]
+#
+# urlpatterns = [
+#     path('', include('chat.urls'))
+# ]
