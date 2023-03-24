@@ -1,8 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
+# Create your views here
+
 def index(request):
+    return HttpResponse("<h1>Проект Натан &Ко</h1>"
+                        "<p>Куратор: Ерогова Инна Сергеевна<br>DevOPS & PEP rules:Чубарь СА (выпуск 2020)</p>"
+                        "<br><br>"
+                        "<h4>Реализуемые задачи<h4>"
+                        "V - Написать серверную часть кода<br>"
+                        "(в процессе) - реализовать пользовательсую часть")
+def easter_egg(request):
     return HttpResponse("<h1>Index of/</h1><br>"
                         "<p>Hello, world!<br><br>"
                         "<h3>Пасхалка от Стасяна</h3><br>"
