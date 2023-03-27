@@ -18,6 +18,8 @@ from django.urls import path, include
 from chat import views as chatviews
 from tasks import views as tasksviews
 from timetable import views as timetableviews
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 
@@ -27,4 +29,4 @@ urlpatterns = [
     path('egg', timetableviews.easter_egg, name="EasterEgg")
     # path('chat/<str:user>/', chatviews, name='chat'),
     # path('', include('chat.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,0 +1,14 @@
+upwardly {
+float: up;
+background: #808080;
+width: 100%;
+heigh: 10%
+color: #fff
+}
+
+aside .ul. hr li {
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    border: 1px solid #000; /* Рамка вокруг текста */
+    padding: 3px
+}
