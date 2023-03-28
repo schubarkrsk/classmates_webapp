@@ -22,6 +22,7 @@ time - TimeField
 message - TextField
 """
 
+
 # Create your models here.
 class Chat(models.Model):
     """
@@ -41,6 +42,7 @@ class Chat(models.Model):
     def __str__(self):
         return f"<{self.id}> {self.uuidfrom} | {self.uuidto} | {self.data} | {self.time} | {self.msg}"
 
+
 class GroupChat(models.Model):
     """
     Модель записи групповых чатов
@@ -50,12 +52,12 @@ class GroupChat(models.Model):
     owner = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Пользователь")
     title = models.CharField(max_length=100, help_text="Название")
 
-
     class Meta:
         verbose_name = "Group chat"
 
     def __str__(self):
         return f"<{self.id}> {self.owner} | {self.title}"
+
 
 class ListGroup(models.Model):
     """
@@ -66,12 +68,12 @@ class ListGroup(models.Model):
     chat = models.ForeignKey(GroupChat, on_delete=models.CASCADE, help_text="Групповой чат")
     user_id = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Пользователь")
 
-
     class Meta:
         verbose_name = "list group"
 
     def __str__(self):
         return f"<{self.id}>  {self.chat} | {self.user_id}"
+
 
 class ListMsg(models.Model):
     """
@@ -91,3 +93,19 @@ class ListMsg(models.Model):
     def __str__(self):
         return f"<{self.id}> {self.chat} | {self.user_id} | {self.data} | {self.time} | {self.message}"
 
+
+class Message(models.Model):
+    """
+    Модель сообщений
+    """
+    # Columns
+    sender = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, related_name='sender')
+    receiver = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, related_name='receiver')
+    content = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = "message"
+
+    def __str__(self):
+        return f"<{self.sender}> {self.receiver} | {self.content} | {self.timestamp}"
