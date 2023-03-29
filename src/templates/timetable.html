@@ -4,5 +4,16 @@
 
 {% block content %}
     <h1>Расписание</h1>
-{{lessons}}
+
+    <h3>Понедельник</h3>
+    {% for urok in lessons %}
+
+
+            <p>{{ urok.lesson_id.title }}<br>
+            {{ urok.start }} | {{ urok.lesson_id.room }}
+            </p>
+
+
+    {% endfor %}
+
 {% endblock %}
