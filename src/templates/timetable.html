@@ -4,5 +4,28 @@
 
 {% block content %}
     <h1>Расписание</h1>
-{{lessons}}
+
+    <h3>Понедельник</h3>
+    {% for urok in lessons %}
+
+    {% if urok.day_of_week == "1" %}
+            <p>{{ urok.lesson_id.title }}<br>
+            {{ urok.start }}-{{ urok.end }}| {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}<br>
+                {{ urok.lesson_id.room }}
+            </p>
+    {% endif %}
+
+    {% endfor %}
+    <h3>Вторник</h3>
+    {% for urok in lessons %}
+
+    {% if urok.day_of_week == "2" %}
+            <p>{{ urok.lesson_id.title }}<br>
+            {{ urok.start }}-{{ urok.end }}| {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}<br>
+                {{ urok.lesson_id.room }}
+            </p>
+    {% endif %}
+
+    {% endfor %}
+
 {% endblock %}
