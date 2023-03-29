@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Lessons
+from .models import Timetable
 
 # Create your views here
 
 def index(request):
-    lessons = Lessons.objects.all()
+    lessons = Timetable.objects.all()
     return render(request, 'timetable.html', {'lessons': lessons})
 
 def easter_egg(request):
