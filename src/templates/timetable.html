@@ -1,12 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block title %}Расписание{% endblock %}
+{% block style %}{% endblock %}
 
 {% block content %}
-    <h1>Расписание</h1>
-    <table class="Timetable_Monday" border="2" width=100%>
+    <h1 align="center">Расписание</h1> <br>
+    <table  class="Timetable_Monday" border="2" bordercolor="red" width=60% align="center">
         <tr bgcolor="#C0C0C0">
-            <td colspan="4">
+            <td colspan="4" align="center">
                 <h3>Понедельник</h3>
             </td>
         </tr>
@@ -15,15 +16,15 @@
 
             {% if urok.day_of_week == "1" %}
             <tr><td><p>{{ urok.lesson_id.title }}</td>
-                <td style: border-style: dotted>{{ urok.start }}-{{ urok.end }}</td> <td> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
-                    <td>{{ urok.lesson_id.room }}</td>
+                <td align="center">{{ urok.start }}-{{ urok.end }}</td> <td align="center"> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
+                    <td align="center">{{ urok.lesson_id.room }}</td>
             </p></tr>
             {% endif %}</tr>
             {% endfor %}
         </tr>
     </table>
 
-    <table class="Timetable_Monday" border="2" width=100%>
+    <table class="Timetable_Monday" border="2" width=60% align="center">
         <tr bgcolor="#C0C0C0">
             <td colspan="4" align="center">
                 <h3>Вторник</h3>
@@ -33,16 +34,16 @@
             {% for urok in lessons %}
 
             {% if urok.day_of_week == "2" %}
-            <tr><td align="center"><p>{{ urok.lesson_id.title }}</td>
-                <td>{{ urok.start }}-{{ urok.end }}</td> <td> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
-                    <td>{{ urok.lesson_id.room }}</td>
+            <tr><td><p>{{ urok.lesson_id.title }}</td>
+                <td align="center">{{ urok.start }}-{{ urok.end }}</td> <td align="center"> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
+                    <td align="center">{{ urok.lesson_id.room }}</td>
             </p></tr>
             {% endif %}</tr>
             {% endfor %}
         </tr>
     </table>
 
-    <table class="Timetable_Monday" border="2" width=100%>
+    <table class="Timetable_Monday" border="2" width=60% align="center">
         <tr bgcolor="#C0C0C0">
             <td colspan="4" align="center">
                 <h3>Среда</h3>
@@ -52,16 +53,16 @@
             {% for urok in lessons %}
 
             {% if urok.day_of_week == "3" %}
-            <tr><td align="center"><p>{{ urok.lesson_id.title }}</td>
-                <td>{{ urok.start }}-{{ urok.end }}</td> <td> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
-                    <td>{{ urok.lesson_id.room }}</td>
+            <tr><td><p>{{ urok.lesson_id.title }}</td>
+                <td align="center">{{ urok.start }}-{{ urok.end }}</td> <td align="center"> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
+                    <td align="center">{{ urok.lesson_id.room }}</td>
             </p></tr>
             {% endif %}</tr>
             {% endfor %}
         </tr>
     </table>
 
-    <table class="Timetable_Monday" border="2" width=100%>
+    <table class="Timetable_Monday" border="2" width=60% align="center">
         <tr bgcolor="#C0C0C0">
             <td colspan="4" align="center">
                 <h3>Четверг</h3>
@@ -71,16 +72,16 @@
             {% for urok in lessons %}
 
             {% if urok.day_of_week == "4" %}
-            <tr><td align="center"><p>{{ urok.lesson_id.title }}</td>
-                <td style="">{{ urok.start }}-{{ urok.end }}</td> <td> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
-                    <td>{{ urok.lesson_id.room }}</td>
+            <tr><td><p>{{ urok.lesson_id.title }}</td>
+                <td align="center">{{ urok.start }}-{{ urok.end }}</td> <td align="center"> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
+                    <td align="center">{{ urok.lesson_id.room }}</td>
             </p></tr>
             {% endif %}</tr>
             {% endfor %}
         </tr>
     </table>
 
-    <table class="Timetable_Monday" border="2" width=100%>
+    <table class="Timetable_Monday" border="2" width=60% align="center">
         <tr bgcolor="#C0C0C0">
             <td colspan="4" align="center">
                 <h3>Пятница</h3>
@@ -90,16 +91,16 @@
             {% for urok in lessons %}
 
             {% if urok.day_of_week == "5" %}
-            <tr><td align="center"><p>{{ urok.lesson_id.title }}</td>
-                <td>{{ urok.start }}-{{ urok.end }}</td> <td> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
-                    <td>{{ urok.lesson_id.room }}</td>
+            <tr><td><p>{{ urok.lesson_id.title }}</td>
+                <td align="center">{{ urok.start }}-{{ urok.end }}</td> <td align="center"> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
+                    <td align="center">{{ urok.lesson_id.room }}</td>
             </p></tr>
             {% endif %}</tr>
             {% endfor %}
         </tr>
     </table>
 
-    <table class="Timetable_Monday" border="2" width=100%>
+    <table class="Timetable_Monday" border="2" width=60% align="center">
         <tr bgcolor="#C0C0C0">
             <td colspan="4" align="center">
                 <h3>Суббота</h3>
@@ -109,9 +110,9 @@
             {% for urok in lessons %}
 
             {% if urok.day_of_week == "6" %}
-            <tr><td align="center"><p>{{ urok.lesson_id.title }}</td>
-                <td>{{ urok.start }}-{{ urok.end }}</td> <td> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
-                    <td>{{ urok.lesson_id.room }}</td>
+            <tr><td><p>{{ urok.lesson_id.title }}</td>
+                <td align="center">{{ urok.start }}-{{ urok.end }}</td> <td align="center"> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
+                    <td align="center">{{ urok.lesson_id.room }}</td>
             </p></tr>
             {% endif %}</tr>
             {% endfor %}
