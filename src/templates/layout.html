@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/timetable.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/relases/v5.15.0/css/all.css">
-    <style>
+   {% block style %} <style>
      ul.hr {
       margin: 0; /* Обнуляем значение отступов */
       padding: 4px; /* Значение полей */
@@ -18,16 +18,19 @@
       border: 1px solid #000; /* Рамка вокруг текста */
       padding: 3px
      }
-
-    </style>
+    </style>{% endblock %}
 </head>
 <body>
 <upwardly>
-    <ul>
-        <a href=""><li display: inline-block><i class="fa-solid fa-calendar-days"></i> Расписнание</li></a>
-        <a href=""><li display: inline-block><i class="fa-regular fa-clipboard-list-check"></i> Задачи</li></a>
-        <a href=""><li display: inline-block><i class="fa-brands fa-rocketchat"></i> Чат</li></a>
-    </ul>
+    <table align="center" bgcolor="#708090" width=100%>
+        <tr>
+            <ul>
+                <td><a href=""><li display: inline-block><i class="fa-solid fa-calendar-days"></i><h3> Расписнание</h3></li></a></td>
+                <td><a href=""><li display: inline-block><i class="fa-regular fa-clipboard-list-check"></i><h3> Задачи</h3></li></a></td>
+                <td><a href=""><li display: inline-block><i class="fa-brands fa-rocketchat"></i><h3> Чат</h3></li></a></td>
+            </ul>
+        </tr>
+    </table>
 </upwardly>
 <main>
     {% block content %}
