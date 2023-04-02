@@ -1,6 +1,5 @@
 from django.db import models
 from timetable import models as timetable_model
-
 # Create your models here.
 class Tasks(models.Model):
     """
@@ -10,7 +9,7 @@ class Tasks(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Название задачи")
     owner = models.ForeignKey(timetable_model.Users, on_delete=models.CASCADE, help_text="Ответственный за задачу")
-    status = models.TextField(max_length=50, help_text="Статус задачи")
+    status = models.ForeignKey(ForeignKey(Task_status), on_delete=models.CASCADE, help_text="Статус задачи")
     description = models.TextField(max_length=100, help_text="Задача")
     deadline = models.DateField(help_text="Дедлайн задачи")
 
