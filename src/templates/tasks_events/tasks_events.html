@@ -1,0 +1,34 @@
+{% extends 'tasks_events/layout.html' %}
+
+{% block title %}Задачи и мероприятия{% endblock %}
+
+{% block content %}
+    <h1 align="center">Задачи</h1> <br>
+    <table  class="Tasks" border="2" width=60% align="center">
+        <tr bgcolor="#C0C0C0">
+            <td>
+                <h3>Задача</h3>
+            </td>
+            <td>
+                <h3>Ответственный</h3>
+            </td>
+            <td>
+                <h3>Описание</h3>
+            </td>
+            <td>
+                <h3>Срок</h3>
+            </td>
+            <td>
+                <h3>Статус</h3>
+            </td>
+        </tr>
+        <tr>
+            {% for task in tasks %}
+            <tr><td><p>{{ task.title }}</td>
+                <td align="center">{{ task.owner }}</td> <td align="center"> {{ task.description }}</td><td align="center">{{ task.deadline }}</td><td align="center">{{ task.status }}</td>
+            </p></tr></tr>
+            {% endfor %}
+        </tr>
+    </table>
+
+{% endblock %}

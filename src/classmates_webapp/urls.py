@@ -26,6 +26,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', timetableviews.index, name="home"), # TODO: Перенести в профильный URLs приложения
+    path('task', tasksviews.index, name="home"),
     path('egg', timetableviews.easter_egg, name="EasterEgg")
     # path('chat/<str:user>/', chatviews, name='chat'),
     # path('', include('chat.urls')),
