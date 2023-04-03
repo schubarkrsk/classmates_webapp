@@ -1,6 +1,22 @@
 from django.db import models
 from timetable import models as timetable_model
 # Create your models here.
+
+class Task_status(models.Model):
+    """
+    Модель записи задач
+    """
+    # Columns
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100, help_text="Статус задачи")
+
+    class Meta:
+        verbose_name = "Task status"
+        ordering = ["title"]
+
+    def __str__(self):
+        return f"<{self.id}> {self.title}"
+
 class Tasks(models.Model):
     """
     Модель записи расписания задачи
@@ -36,17 +52,3 @@ class Task_visitors(models.Model):
     def __str__(self):
         return f"<{self.id}> {self.task} | {self.visitor_id}"
 
-class Task_status(models.Model):
-    """
-    Модель записи задач
-    """
-    # Columns
-    id = models.AutoField(primary_key=True)
-    title = models.CharField(max_length=100, help_text="Статус задачи")
-
-    class Meta:
-        verbose_name = "Task status"
-        ordering = ["title"]
-
-    def __str__(self):
-        return f"<{self.id}> {self.title}"
