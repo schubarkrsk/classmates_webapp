@@ -6,7 +6,7 @@ from .models import Timetable
 
 def index(request):
     lessons = Timetable.objects.all()
-    return render(request, 'timetable.html', {'lessons': lessons})
+    return render(request, 'timetable/timetable.html', {'lessons': lessons})
 
 def easter_egg(request):
     return HttpResponse("<h1>Index of/</h1><br>"

@@ -52,3 +52,18 @@ class Task_visitors(models.Model):
     def __str__(self):
         return f"<{self.id}> {self.task} | {self.visitor_id}"
 
+class Events(models.Model):
+    """
+    Модель записи расписания задачи
+    """
+    # Columns
+    id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100, help_text="Название мероприятия")
+    date = models.DateField(help_text="Дата задачи")
+
+    class Meta:
+        verbose_name = "Events"
+        ordering = ["title"]
+
+    def __str__(self):
+        return f"<{self.id}> {self.title} | {self.date}"
