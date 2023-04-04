@@ -18,8 +18,10 @@
             <tr><td><p>{{ urok.lesson_id.title }}</td>
                 <td align="center">{{ urok.start }}-{{ urok.end }}</td> <td align="center"> {{ urok.lesson_id.teacher.familiya }} {{ urok.lesson_id.teacher.imya }} {{ urok.lesson_id.teacher.otchestvo }}</td>
                     <td align="center">{{ urok.lesson_id.room }}</td>
-            </p></tr>
-            {% endif %}</tr>
+            </p>
+            </tr>
+            {% endif %}
+                </tr>
             {% endfor %}
         </tr>
     </table>
