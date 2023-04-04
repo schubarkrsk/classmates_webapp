@@ -22,15 +22,13 @@
                 <h3>Статус</h3>
             </td>
         </tr>
+        <tr>
             {% for task in tasks %}
-            <tr>
-                <td><p>{{ task.title }}</p></td>
-                <td align="center">{{ task.owner }}</td>
-                <td align="center"> {{ task.description }}</td>
-                <td align="center">{{ task.deadline }}</td><td align="center">{{ task.status }}</td>
-
-            </tr></tr>
+            <tr><td><p>{{ task.title }}</td>
+                <td align="center">{{ task.owner }}</td> <td align="center"> {{ task.description }}</td><td align="center">{{ task.deadline }}</td><td align="center">{{ task.status }}</td>
+            </p></tr></tr>
             {% endfor %}
+        </tr>
     </table>
 
 {% endblock %}

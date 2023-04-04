@@ -59,7 +59,7 @@ class Events(models.Model):
     # Columns
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Название мероприятия")
-    date = models.DateField(help_text="Дата задачи")
+    date = models.DateField(help_text="Дата мероприятия")
 
     class Meta:
         verbose_name = "Events"

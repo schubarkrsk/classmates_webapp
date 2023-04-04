@@ -20,7 +20,7 @@ class Users(models.Model):
         ordering = ["familiya", "imya", "otchestvo"]
 
     def __str__(self):
-        return f"<{self.id}> {self.familiya} {self.imya} {self.otchestvo} | {self.login} "
+        return f" {self.familiya} {self.imya} {self.otchestvo} "
 
 
 class UserRoles(models.Model):
