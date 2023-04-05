@@ -60,11 +60,10 @@ class Events(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100, help_text="Название мероприятия")
     date = models.DateField(help_text="Дата мероприятия")
-    place = models.TextField(max_length=100, help_text="Место проведения")
 
     class Meta:
         verbose_name = "Events"
         ordering = ["title"]
 
     def __str__(self):
-        return f"<{self.id}> {self.title} | {self.date} | {self.place}"
+        return f"<{self.id}> {self.title} | {self.date}"
