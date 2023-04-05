@@ -31,4 +31,25 @@
         </tr>
     </table>
 
+    <h1 align="center">Мероприятия</h1> <br>
+    <table  class="Tasks" border="2" width=60% align="center">
+        <tr bgcolor="#C0C0C0">
+            <td>
+                <h3>Мероприятие</h3>
+            </td>
+            <td>
+                <h3>Дата проведения</h3>
+            </td>
+            <td>
+                <h3>Место проведения</h3>
+            </td>
+        <tr>
+            {% for event in events %}
+            <tr><td><p>{{ event.title }}</td>
+                <td align="center">{{ event.date }}</td> <td align="center"> {{ event.place }}</td>
+            </p></tr></tr>
+            {% endfor %}
+        </tr>
+    </table>
+
 {% endblock %}
