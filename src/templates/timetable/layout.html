@@ -10,21 +10,30 @@
 </head>
 <body>
 <aside bgcolor="#708090" >
-    <img src="{% static 'static/img/logo.jpg' %}" alt="Лого" width="5%">
-    <ul>
-        <h1 align="center">Меню</h1>
-        <br>
-        <td><a href="/" ><li><h2 class="meny"> Расписнание</h2></li></a></td>
-        <br>
-        <td><a href="/task"><li><h2 class="meny"> Задачи</h2></li></a></td>
-        <br>
-        <td><a href=""><li><h2 class="meny"> Чат</h2></li></a></td>
-    </ul>
+    <table>
+        <tr>
+            <img src="{% static 'static/img/logo.jpg' %}" alt="Лого" width="5%">
+        </tr>
+        <tr>
+            <h1 align="center">Меню</h1>
+        </tr>
+        <tr>
+            <td><a href="/" ><li><h2 class="meny"> Расписнание</h2></li></a></td>
+        </tr>
+        <tr>
+            <td><a href="/task"><li><h2 class="meny"> Задачи</h2></li></a></td>
+        </tr>
+        <tr>
+            <td><a href=""><li><h2 class="meny"> Чат</h2></li></a></td>
+        </tr>
+    </table>
 </aside>
 <main>
-    {% block content %}
-    {{lessons}}
-    {% endblock %}
+    <table>
+        {% block content %}
+        {{lessons}}
+        {% endblock %}
+    </table>
 </main>
 <a href="/egg">пасхалка</a>
 </body>
