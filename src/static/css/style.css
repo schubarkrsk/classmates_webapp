@@ -6,7 +6,11 @@ float: left;
 background: #181818;
 width: 20%;
 padding: 2.5%;
-height: 100vh;
+height: 100%;
 color: #FFFFFF;
 border-right: 5px solid #4d4d4d;
+}
+.meny {
+color: white;
+font-size: 200%;
 }
