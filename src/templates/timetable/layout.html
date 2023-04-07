@@ -9,23 +9,30 @@
     <link rel="shortcut icon" type="image/png" href="'favicon.ico'"/>
 </head>
 <body>
-<aside bgcolor="#708090" >
-    <img src="{% static 'static/img/logo.jpg' %}" alt="Лого" width="5%">
-    <ul>
-        <h1 align="center">Меню</h1>
-        <br>
-        <td><a href="/" ><li><h2 class="meny"> Расписнание</h2></li></a></td>
-        <br>
-        <td><a href="/task"><li><h2 class="meny"> Задачи</h2></li></a></td>
-        <br>
-        <td><a href=""><li><h2 class="meny"> Чат</h2></li></a></td>
-    </ul>
-</aside>
-<main>
-    {% block content %}
-    {{lessons}}
-    {% endblock %}
-</main>
+<table border="0px">
+    <tr>
+        <td bgcolor="#adadad" width=25%>
+            <img src="{% static 'static/img/logo.jpg' %}" alt="Лого" width="5%">
+            <h1 align="center">Меню</h1>
+            <br>
+            <ul>
+                <li><a href="/">Расписнание</a></li>
+                <li><a href="/task">Задачи</a></li>
+                <li><a href="">Чат</a></li>
+            </ul>
+
+        </td>
+        <td><img src="https://avatars.mds.yandex.net/get-altay/2887807/2a00000184ccfb49678324babdce998c20d7/XXXL" alt="school" height=25%></td>
+    </tr>
+    <tr>
+        <td bgcolor="black"></td>
+        <td>
+            {% block content %}
+            {{lessons}}
+            {% endblock %}
+        </td>
+    </tr>
+</table>
 <a href="/egg">пасхалка</a>
 </body>
 </html>
