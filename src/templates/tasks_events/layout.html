@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body link="white" vlink="white" alink="white">
-<aside bgcolor="#708090">
-    <img src="{% static 'static/img/logo.jpg' %}" alt="Лого" width="5%">
-    <ul>
-        <h1 align="center">Меню</h1>
-        <br>
-        <td><a href="/" ><li><h2 class="meny"> Расписнание</h2></li></a></td>
-        <br>
-        <td><a href="/task"><li><h2 class="meny"> Задачи</h2></li></a></td>
-        <br>
-        <td><a href=""><li><h2 class="meny"> Чат</h2></li></a></td>
-    </ul>
-</aside>
 <main>
-    {% block content %}
-    {{tasks}},
-    {{events}}
-    {% endblock %}
+<table border="0px" width=100%>
+    <tr>
+        <td bgcolor="black" width=25%>
+            <img src="{% static 'img/logoo.png' %}" alt="Лого" width="60%" align="center">
+            <h1 align="center" class="menu">Меню</h1>
+            <br>
+            <ul>
+                <li><a href="/"><h2 class="meny">Расписнание</h2></a></li>
+                <li><a href="/task"><h2 class="meny">Задачи</h2></a></li>
+                <li><a href=""><h2 class="meny">Чат</h2></a></li>
+            </ul>
+      </td>
+        <td>
+            {% block content %}
+            {{tasks}},
+            {{events}}
+            {% endblock %}
+        </td>
+    </tr>
+</table>
 </main>
 </body>
 </html>

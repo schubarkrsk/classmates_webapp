@@ -7,25 +7,22 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/relases/v5.15.0/css/all.css">
     <link rel="shortcut icon" type="image/png" href="'favicon.ico'"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<table border="0px">
+<main>
+<table border="0px" width=100%>
     <tr>
-        <td bgcolor="#adadad" width=25%>
-            <img src="{% static 'static/img/logo.jpg' %}" alt="Лого" width="5%">
-            <h1 align="center">Меню</h1>
+        <td bgcolor="black" width=25%>
+            <img src="{% static 'img/logoo.png' %}" alt="Лого" width="60%" align="center">
+            <h1 align="center" class="menu">Меню</h1>
             <br>
             <ul>
-                <li><a href="/">Расписнание</a></li>
-                <li><a href="/task">Задачи</a></li>
-                <li><a href="">Чат</a></li>
+                <li><a href="/"><h2 class="meny">Расписнание</h2></a></li>
+                <li><a href="/task"><h2 class="meny">Задачи</h2></a></li>
+                <li><a href=""><h2 class="meny">Чат</h2></a></li>
             </ul>
-
-        </td>
-        <td><img src="https://avatars.mds.yandex.net/get-altay/2887807/2a00000184ccfb49678324babdce998c20d7/XXXL" alt="school" height=25%></td>
-    </tr>
-    <tr>
-        <td bgcolor="black"></td>
+      </td>
         <td>
             {% block content %}
             {{lessons}}
@@ -33,6 +30,8 @@
         </td>
     </tr>
 </table>
+
+</main>
 <a href="/egg">пасхалка</a>
 </body>
 </html>
