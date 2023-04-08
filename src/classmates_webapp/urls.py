@@ -13,21 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from chat import views as chatviews
-from tasks import views as tasksviews
-from timetable import views as timetableviews
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path
 
-
+from tasks import views as task_views
+from timetable import views as timetable_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', timetableviews.index, name="home"), # TODO: Перенести в профильный URLs приложения
-    path('task', tasksviews.index, name="home"),
-    path('egg', timetableviews.easter_egg, name="EasterEgg")
-    # path('chat/<str:user>/', chatviews, name='chat'),
-    # path('', include('chat.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  path('admin/', admin.site.urls),
+                  path('', timetable_view.index, name="home"),  # TODO: Перенести в профильный URLs приложения
+                  path('task', task_views.index, name="home"),
+                  path('egg', timetable_view.easter_egg, name="EasterEgg")
+                  # path('chat/<str:user>/', chatviews, name='chat'),
+                  # path('', include('chat.urls')),
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

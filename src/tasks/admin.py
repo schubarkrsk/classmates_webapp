@@ -3,6 +3,6 @@ from .models import *
 
 # Register your models here.
 admin.site.register(Tasks)
-admin.site.register(Task_status)
-admin.site.register(Task_visitors)
+admin.site.register(TaskStatus)
+admin.site.register(TaskVisitors)
 admin.site.register(Events)

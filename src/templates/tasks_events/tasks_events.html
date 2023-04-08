@@ -25,9 +25,14 @@
         </tr>
         <tr>
             {% for task in tasks %}
-            <tr><td align="center"><p>{{ task.title }}</td>
-                <td align="center">{{ task.owner }}</td> <td align="center"> {{ task.description }}</td><td align="center">{{ task.deadline }}</td><td align="center">{{ task.status }}</td>
-            </p></tr></tr>
+            <tr>
+                <td align="center"><p>{{ task.title }}</td>
+                <td align="center">{{ task.owner }}</td>
+                <td align="center"> {{ task.description }}</td>
+                <td align="center">{{ task.deadline }}</td>
+                <td align="center">{{ task.status }}</td>
+            </tr>
+        </tr>
             {% endfor %}
         </tr>
     </table>
@@ -48,9 +53,9 @@
             </td>
         <tr>
             {% for event in events %}
-            <tr><td align="center"><p>{{ event.title }}</td>
+                <td align="center"><p>{{ event.title }}</p></td>
                 <td align="center">{{ event.date }}</td> <td align="center"> <p>Актовый зал</p></td>
-            </p></tr></tr>
+            </tr></tr>
             {% endfor %}
         </tr>
     </table>
