@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Tasks
 from .models import Events
+
+
 # Create your views here.
 
 def index(request):

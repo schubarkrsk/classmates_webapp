@@ -2,11 +2,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Timetable
 
+
 # Create your views here
 
 def index(request):
     lessons = Timetable.objects.all()
     return render(request, 'timetable/timetable.html', {'lessons': lessons})
+
 
 def easter_egg(request):
     return HttpResponse("<h1>Index of/</h1><br>"
@@ -21,4 +23,3 @@ def easter_egg(request):
                         "End Start</p>"
                         "<br><br>"
                         "<p>SECRET HASH: b42acda9b495eac5b6c303fc993afe02e3a594e1bffb801be9b46aecec9f55fa</p>")
-
